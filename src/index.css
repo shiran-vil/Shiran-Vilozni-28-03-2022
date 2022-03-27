@@ -1,10 +1,10 @@
 html {
   font-size: 62.5%;
-  /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
 }
 
-body {
+/* Themes */
+body.light-mode {
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
@@ -12,6 +12,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(#FFBF86, #F3F0D7);
+}
+
+body.dark-mode {
+  background-image: linear-gradient(#4e4949, #97968e);
+  color: rgb(172, 143, 143);
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Layout */
@@ -38,6 +49,28 @@ header {
   z-index: 1;
   width: 100%;
   background-color: #FDA65D;
+}
+
+.button-switch {
+  color: #006688;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  padding: 0;
+
+}
+
+.toggle-control {
+  width: 3rem;
+  padding: 0 4px;
+  align-items: center;
+}
+
+.toggle-location {
+
+  position: absolute;
+  top: 5%;
+  right: 2%
 }
 
 .container {
@@ -259,7 +292,6 @@ main {
 }
 
 
-
 @keyframes slidein {
   from {
     margin-left: 100%;
@@ -315,8 +347,9 @@ main {
 .favorites-space {
   justify-content: space-around;
   display: flex;
-
+  flex-wrap: wrap;
 }
+
 .icon-position {
   position: relative;
   top: 60%;

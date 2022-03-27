@@ -2,6 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 import { updateUnits } from '../store/actions';
+import DarkMode from "./DarkMode";
 
 const Header = () => {
     const style = ({ isActive }) => ({
@@ -19,6 +20,7 @@ const Header = () => {
             <div className="container">
                 <nav className="nav_checkbox">
                     <Link to="/" className="logo"><h2>Abra Weather</h2></Link>
+
                     <input type="checkbox" id="tab-nav" className="tab-nav" />
                     <label htmlFor="tab-nav" className="label">
                         <div className="burger"></div>
@@ -37,8 +39,8 @@ const Header = () => {
                                     <label onClick={() => setUnits('Imperial')}>Imperial</label>
                                 </div>
                             </div>
-
                         </li>
+                        <DarkMode />
                     </ul>
                 </nav>
             </div>
