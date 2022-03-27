@@ -1,0 +1,2 @@
+aytocomplete search: 
+curl -X GET "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=0OsjKA27Al1OGJCRCuFsjAWAgz9LPf4A&q=tel%20aviv"
