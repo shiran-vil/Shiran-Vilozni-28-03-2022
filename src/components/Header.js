@@ -2,7 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 import { updateUnits } from '../store/actions';
-import DarkMode from "./DarkMode";
+import DarkMode from "./themes/DarkMode";
 
 const Header = () => {
     const style = ({ isActive }) => ({

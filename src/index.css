@@ -36,6 +36,15 @@ body.dark-mode {
   height: 100%;
 }
 
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+.content {
+  margin: 3rem;
+}
+
 /* Header */
 header {
   grid-area: header;
@@ -191,7 +200,6 @@ h2 {
 
   }
 
-
 }
 
 a {
@@ -264,15 +272,10 @@ a.brand {
   background-color: #F2FA5A;
 }
 
-main {
-  grid-area: main;
-  padding: 1rem;
-}
 
-.content {
-  margin: 3rem;
-}
 
+
+/* home screen */
 .home-weather-box {
   padding-top: 3rem;
   margin-top: 10rem;
@@ -280,7 +283,6 @@ main {
   height: 33rem;
 }
 
-/* home screen */
 .home-pic {
   width: 6%;
   position: absolute;
