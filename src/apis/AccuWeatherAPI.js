@@ -20,3 +20,10 @@ export const getForecast = (id, metric = true) => {
 		headers: { Accept: 'application/json' }
 	});
 };
+
+export const geolocation = (lat, lon) => {
+	return axios.get('http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=' + API_KEY + '&q=' + lat + '%2C' + lon + '',
+		{
+			headers: { Accept: 'application/json' }
+		});
+};
