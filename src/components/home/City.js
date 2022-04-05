@@ -27,7 +27,7 @@ const City = () => {
             let lon = position.coords.longitude;
 
             //looking for the city id using geolocation
-            let cityIdUrl = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=' + API_KEY + '&q=' + lat + '%2C' + lon + '';
+            let cityIdUrl = 'https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=' + API_KEY + '&q=' + lat + '%2C' + lon + '';
             axios.get(cityIdUrl, null).then((res) => dispatch(updateCity(res.data)))
                 .catch((err) => alert(err));;
         }
