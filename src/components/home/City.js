@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getForecast, getWeatherSearch, geoLocation } from '../../apis/AccuWeatherAPI';
 import { updateCity } from '../../store/actions';
 import CityDetails from './CityDetails';
 import ForecastFive from './ForecastFive';
@@ -28,7 +27,8 @@ const City = () => {
             let lon = position.coords.longitude;
 
             //looking for the city id using geolocation
-            axios.get(lat, lon, null).then((res) => dispatch(updateCity(res.data)))
+            let cityIdUrl = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=' + API_KEY + '&q=' + lat + '%2C' + lon + '';
+            axios.get(cityIdUrl, null).then((res) => dispatch(updateCity(res.data)))
                 .catch((err) => alert(err));;
         }
 
