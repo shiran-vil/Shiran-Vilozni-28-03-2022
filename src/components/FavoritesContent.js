@@ -33,7 +33,7 @@ const FavoritesContent = ({ city }) => {
 		<Link
 		    className=" favorite-card"
 		    onClick={handleRequestedCity} to="/">
-		    <div className="">
+		    <div>
 		        <h5 className="font-style text-center">{city.LocalizedName}</h5>
 		        <h5 className="text-center"><TemperatureData type='current' data={currentWeather} /></h5>
 		        <i className="fa-solid fa-temperature-empty fa-lg p-2 fa-beat icon-position"></i>

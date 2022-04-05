@@ -10,7 +10,7 @@ const SearchBox = () => {
     const [hintData, setHintData] = useState([]);
 
     const setData = () => {
-        return getWeatherSearch(searchText).then((res) => setHintData(res.data)).catch((err) => console.log(err));
+        return getWeatherSearch(searchText).then((res) => setHintData(res.data)).catch((err) => alert(err));
     };
 
     useEffect(() => {

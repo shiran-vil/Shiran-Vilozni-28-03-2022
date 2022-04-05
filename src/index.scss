@@ -5,6 +5,7 @@ html {
 
 /* Themes */
 body.light-mode {
+  
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
@@ -12,9 +13,23 @@ body.light-mode {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(#FFBF86, #F3F0D7);
+  
 }
 
 body.dark-mode {
+  header {
+    background-color: #1b2938;
+  }
+  .toggle-location > button {
+    color: #999;
+    &:last-child {
+      color: lightblue;
+    }
+  }
+  .dropbtn {
+    background-color: #999;
+  }
+
   background-image: linear-gradient(#4e4949, #97968e);
   color: rgb(172, 143, 143);
   margin: 0;
@@ -24,6 +39,41 @@ body.dark-mode {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input[type='checkbox'].dmcheck {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+
+  &:checked + label {
+    left: 40px;
+    
+  }
+  &:focus-visible {
+    outline: solid 2px white;
+  }
+
+  & + label {
+    display: inline-block;
+    width: 16px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 12px;
+    background: #fff;
+    opacity: 0.9;
+    background-color: #f6f6f6;
+  } }
 
 /* Layout */
 .grid-container {
@@ -71,15 +121,15 @@ header {
 
 .toggle-control {
   width: 3rem;
-  padding: 0 4px;
+  padding: 0 5px;
   align-items: center;
 }
 
 .toggle-location {
 
   position: absolute;
-  top: 5%;
-  right: 2%
+  top: 7%;
+  right: 1%
 }
 
 .container {
@@ -231,10 +281,10 @@ a.brand {
 
 .dropbtn {
   background-color: #FFD365;
-  padding: 1rem;
   border: none;
   border-radius: 2%;
   cursor: pointer;
+  
 }
 
 .dropdown {
