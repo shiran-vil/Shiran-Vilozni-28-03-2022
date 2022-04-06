@@ -67,7 +67,6 @@ const City = () => {
     return (
         <div
             className="w-100  home-weather-box"
-            style={{ background: 'rgba(0, 204, 255, 0.3)' }}
         >
             <CityDetails city={city} />
             <ForecastFive cityKey={cityKey} />

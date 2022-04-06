@@ -12,13 +12,26 @@ const SearchBox = () => {
     const setData = () => {
         return getWeatherSearch(searchText).then((res) => setHintData(res.data)).catch((err) => alert(err));
     };
-
+    let filterTimeout;
     useEffect(() => {
-        if (searchText.length > 0 && /^[A-Za-z -]*$/.test(searchText)) setData();
+    
+
+        if (searchText.length > 0 && /^[A-Za-z -]*$/.test(searchText)) {
+        
+           clearTimeout(filterTimeout);
+           filterTimeout = setTimeout(() => {
+                console.log('====>', searchText)
+                setData();
+            }, 3000)
+            
+            //setData();
+        }
+
     }, [searchText]);
 
     const handleTyping = (e) => {
         setSearchText(e.target.value);
+
     }
 
     const handleRequestedCity = (cityName) => {
@@ -31,7 +44,7 @@ const SearchBox = () => {
     const style = { width: '100%', marginTop: '3rem', position: 'relative' };
     return (
         <Autocomplete
-            wrapperStyle={{ width: '50%'}}
+            wrapperStyle={{ width: '50%' }}
             inputProps={{ style }}
             getItemValue={(item) => item.LocalizedName}
             items={hintData}

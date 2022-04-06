@@ -19,7 +19,7 @@ const ForecastFive = ({ cityKey }) => {
     if (!cityKey || forecasts.length === 0) return null;
 
 	return (
-		<div className="forecastsContainer d-flex flex-row justify-content-between flex-wrap p-4 w-100">
+		<div className=" d-flex flex-row justify-content-between flex-wrap p-4 w-100">
 			{forecasts.DailyForecasts.map((d) => <Forecast key={d.EpochDate} day={d} />)}
 		</div>
 	);
